@@ -1,0 +1,688 @@
+<div nz-row nzJustify="center">
+  <div nz-col nzSpan="12" class="header">
+    <div nz-row nzJustify="center" style="padding: 15px">
+      <div nz-col nzSpan="5">
+        <img src="/assets/enat_logo.svg" alt="logo" />
+      </div>
+      <div nz-col nzSpan="17" style="line-height: 100px; padding: 0">
+        <h1>Enat Bank Sc.</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div nz-row nzJustify="center" *ngIf="index === 0">
+  <div nz-col nzSpan="12" class="content">
+    <div nz-row nzJustify="center" style="padding: 15px">
+      <h1>Training effectiveness assessment Survey</h1>
+      <p>
+        The HRM and SS Department had been actively co-coordinating a series of
+        training courses since the establishment of the bank. This questionnaire
+        is thus, prepared to evaluate the impact of training and development
+        activities on the job performance and the impact translates into
+        organizational effectiveness. The result of this survey also serves as a
+        means to improve the strength and avoid the weakness on organizing
+        training and its effectiveness and to improve individual’s performance.
+        Accordingly, the HRM & SS Department would like to seek genuine
+        responses to this questionnaire on how the training courses have
+        benefited and impacted your work environment. Your responsible response
+        to this questionnaire is therefore of paramount significance to attain
+        the objectives of the survey.
+      </p>
+      <div style="text-align: center">
+        <button
+        (click)="onGetStarted()"
+          nz-button
+          style="background: #b30c13; color: #fff; border-radius: 5px"
+        >
+          Get Started <i nz-icon nzType="right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div nz-row nzJustify="center" style="bottom: 50px" *ngIf="index >= 1">
+  <div nz-col nzSpan="12" class="content">
+    <div nz-row nzJustify="center" style="padding: 15px">
+      <div nz-col nzSpan="24" *ngIf="index === 1">
+        <h1>General Information</h1>
+      </div>
+      <div nz-col nzSpan="24" *ngIf="index === 1">
+        <small>Tick Mark in the relevant boxes to indicate your response</small>
+      </div>
+
+      <form nz-form nzLayout="vertical" [formGroup]="evaluationForm" *ngIf="index === 1" >
+        <div nz-row [nzGutter]="32">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label nzRequired><b>Gender: </b> </nz-form-label>
+              <nz-form-control>
+                <nz-radio-group formControlName="sex">
+                  <label nz-radio nzValue="F">Female</label>
+                  <label nz-radio nzValue="M">Male</label>
+                </nz-radio-group>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label nzRequired><b>Age: </b> </nz-form-label>
+              <nz-form-control>
+                <nz-select
+                  formControlName="age"
+                  nzPlaceHolder="Select your age range"
+                >
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Less than 25"
+                    nzValue="20"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      Less than 25
+                    </b>
+                  </nz-option>
+                  <nz-option nzCustomContent nzLabel="26 - 35" nzValue="30">
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      Between 26 - 35
+                    </b>
+                  </nz-option>
+                  <nz-option nzCustomContent nzLabel="36 - 45" nzValue="40">
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      Between 36 - 45
+                    </b>
+                  </nz-option>
+                  <nz-option nzCustomContent nzLabel="45 - 50" nzValue="50">
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      Between 45 - 50
+                    </b>
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row [nzGutter]="32">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label nzRequired><b>Level of Education: </b> </nz-form-label>
+              <nz-form-control>
+                <nz-select
+                  formControlName="educationalQualification"
+                  nzPlaceHolder="Select your educational status"
+                >
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Level I"
+                    nzValue="LEVEL_ONE"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      LEVEL I
+                    </b>
+                  </nz-option>
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Level II"
+                    nzValue="LEVEL_TWO"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      LEVEL II
+                    </b>
+                  </nz-option>
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Level III"
+                    nzValue="LEVEL_THREE"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      LEVEL III
+                    </b>
+                  </nz-option>
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Level IV"
+                    nzValue="LEVEL_FOUR"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      LEVEL IV
+                    </b>
+                  </nz-option>
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Certificate"
+                    nzValue="CERTIFICATE"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      Certificate
+                    </b>
+                  </nz-option>
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Diploma"
+                    nzValue="DIMPLOMA"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      Diploma
+                    </b>
+                  </nz-option>
+                  <nz-option nzCustomContent nzLabel="BA" nzValue="BA">
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      BA
+                    </b>
+                  </nz-option>
+                  <nz-option nzCustomContent nzLabel="BSC" nzValue="BSC">
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      BSC
+                    </b> </nz-option
+                  ><nz-option nzCustomContent nzLabel="MA" nzValue="MA">
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      MA
+                    </b> </nz-option
+                  ><nz-option nzCustomContent nzLabel="MSC" nzValue="MSC">
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      MSC
+                    </b> </nz-option
+                  ><nz-option nzCustomContent nzLabel="MBA" nzValue="MBA">
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      MBA
+                    </b> </nz-option
+                  ><nz-option nzCustomContent nzLabel="MPA" nzValue="MPA">
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      MPA
+                    </b>
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label
+              nzRequired><b>Year of service at Enat Bank: </b>
+              </nz-form-label>
+              <nz-form-control>
+                <nz-select
+                  formControlName="serviceYear"
+                  nzPlaceHolder="Select your service year"
+                >
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Less than 1 year"
+                    nzValue="LESS_THAN_ONE"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      Less than 1 year
+                    </b>
+                  </nz-option>
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Between 1 and 3"
+                    nzValue="BETWEEN_1_AND_3"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      Between 1 and 3
+                    </b>
+                  </nz-option>
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Between 3 and 5"
+                    nzValue="BETWEEN_3_AND_5"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                    Between 3 and 5
+                    </b>
+                  </nz-option>
+                  <nz-option
+                    nzCustomContent
+                    nzLabel="Above 5"
+                    nzValue="ABOVE_5"
+                  >
+                    <b
+                      ><i nz-icon nzType="code"></i>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      Above 5
+                    </b>
+                  </nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row [nzGutter]="32">
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label nzRequired>Job Title</nz-form-label>
+              <nz-form-control>
+                <input nz-input formControlName="jobPosition" placeholder="Your entitlement" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label nzRequired>Department/Branch</nz-form-label>
+              <nz-form-control>
+                <input nz-input formControlName="dept" placeholder="Your department/branch name" />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+      </form>
+      <hr>
+      <div nz-row nzJustify="center" style="padding: 15px" *ngIf="index === 2">
+        <div nz-col nzSpan="24">
+          <h1>Reaction of employees about the training </h1>
+        </div>
+        <div nz-col nzSpan="24">
+          <small>Tick Mark in the relevant boxes to indicate your response</small>
+        </div>
+        <form nz-form nzLayout="vertical" [formGroup]="evaluationForm">
+          <div style="padding: 10px; background: #DCDCDC;" nz-row [nzGutter]="7">
+            <div nz-col nzSpan="2">
+              <b>#</b>
+            </div>
+            <div style="text-align: center;" nz-col nzSpan="13">
+              <b>Parameters of evaluation</b>
+            </div>
+            <div nz-col nzSpan="7" style="margin-left: 10px;">
+                <div nz-row [nzGutter]="16">
+                  <div nz-col nzSpan="4">
+                    <b>1</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>2</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>3</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>4</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>5</b>
+                </div>
+                </div>
+
+            </div>
+            <div style="margin-left: -15px;" nz-col nzSpan="2">
+              <b>Total</b>
+            </div>
+          </div>
+          <div style="padding: 10px;"  *ngFor="let empRxnDetails of employeeRxnControls.controls; let i = index">
+            <div nz-row [nzGutter]="7" [formGroup]="empRxnDetails">
+              <div nz-col nzSpan="2">
+                <b>{{i + 1}}</b>
+              </div>
+              <div nz-col nzSpan="13" >
+                  {{empRxnDetails?.value?.criteria}}
+              </div>
+                  <div nz-col nzSpan="7">
+                      <nz-form-control nz-row [nzGutter]="16">
+                        <nz-radio-group formControlName="point" nzValueType="number"   nzErrorTip="Please select point!">
+                          <label  nz-col nzSpan="4" nz-radio nzValue="1"></label>
+                          <label  nz-col nzSpan="4" nz-radio nzValue="2"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="3"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="4"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="5"></label>
+                        </nz-radio-group>
+                      </nz-form-control>
+                  </div>
+                  <div nz-col nzSpan="2" >
+                    {{empRxnDetails?.value?.point}}
+                </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <hr>
+      <div nz-row nzJustify="center" style="padding: 15px" *ngIf="index === 3">
+        <div nz-col nzSpan="24">
+          <h1>Application of the training on the job </h1>
+        </div>
+        <div nz-col nzSpan="24">
+          <small>Tick Mark in the relevant boxes to indicate your response</small>
+        </div>
+        <form nz-form nzLayout="vertical" [formGroup]="evaluationForm">
+          <div style="padding: 10px; background: #DCDCDC;" nz-row [nzGutter]="7">
+            <div nz-col nzSpan="2">
+              <b>#</b>
+            </div>
+            <div style="text-align: center;" nz-col nzSpan="13">
+              <b>Parameters of evaluation</b>
+            </div>
+            <div nz-col nzSpan="7" style="margin-left: 10px;">
+                <div nz-row [nzGutter]="16">
+                  <div nz-col nzSpan="4">
+                    <b>1</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>2</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>3</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>4</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>5</b>
+                </div>
+                </div>
+
+            </div>
+            <div style="margin-left: -15px;" nz-col nzSpan="2">
+              <b>Total</b>
+            </div>
+          </div>
+          <div style="padding: 10px;"  *ngFor="let trainingAppDetails of trainingAppControls.controls; let i = index">
+            <div nz-row [nzGutter]="7" [formGroup]="trainingAppDetails">
+              <div nz-col nzSpan="2">
+                <b>{{i + 1}}</b>
+              </div>
+              <div nz-col nzSpan="13" >
+                  {{trainingAppDetails?.value?.criteria}}
+              </div>
+                  <div nz-col nzSpan="7">
+                      <nz-form-control nz-row [nzGutter]="16">
+                        <nz-radio-group formControlName="point" nzValueType="number"   nzErrorTip="Please select point!">
+                          <label  nz-col nzSpan="4" nz-radio nzValue="1"></label>
+                          <label  nz-col nzSpan="4" nz-radio nzValue="2"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="3"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="4"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="5"></label>
+                        </nz-radio-group>
+                      </nz-form-control>
+                  </div>
+                  <div nz-col nzSpan="2" >
+                    {{trainingAppDetails?.value?.point}}
+                </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <hr>
+      <div nz-row nzJustify="center" style="padding: 15px" *ngIf="index === 4">
+        <div nz-col nzSpan="24">
+          <h1>Impact (result) of the training on employee’s performance</h1>
+        </div>
+        <div nz-col nzSpan="24">
+          <small>Tick Mark in the relevant boxes to indicate your response</small>
+        </div>
+        <form nz-form nzLayout="vertical" [formGroup]="evaluationForm">
+          <div style="padding: 10px; background: #DCDCDC;" nz-row [nzGutter]="7">
+            <div nz-col nzSpan="2">
+              <b>#</b>
+            </div>
+            <div style="text-align: center;" nz-col nzSpan="13">
+              <b>Parameters of evaluation</b>
+            </div>
+            <div nz-col nzSpan="7" style="margin-left: 10px;">
+                <div nz-row [nzGutter]="16">
+                  <div nz-col nzSpan="4">
+                    <b>1</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>2</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>3</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>4</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>5</b>
+                </div>
+                </div>
+
+            </div>
+            <div style="margin-left: -15px;" nz-col nzSpan="2">
+              <b>Total</b>
+            </div>
+          </div>
+          <div style="padding: 10px;"  *ngFor="let empPerformanceDetails of employeePerformanceEvaluationControls.controls; let i = index">
+            <div nz-row [nzGutter]="7" [formGroup]="empPerformanceDetails">
+              <div nz-col nzSpan="2">
+                <b>{{i + 1}}</b>
+              </div>
+              <div nz-col nzSpan="13" >
+                  {{empPerformanceDetails?.value?.criteria}}
+              </div>
+                  <div nz-col nzSpan="7">
+                      <nz-form-control nz-row [nzGutter]="16">
+                        <nz-radio-group formControlName="point" nzValueType="number"   nzErrorTip="Please select point!">
+                          <label  nz-col nzSpan="4" nz-radio nzValue="1"></label>
+                          <label  nz-col nzSpan="4" nz-radio nzValue="2"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="3"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="4"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="5"></label>
+                        </nz-radio-group>
+                      </nz-form-control>
+                  </div>
+                  <div nz-col nzSpan="2" >
+                    {{empPerformanceDetails?.value?.point}}
+                </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <hr>
+      <div nz-row nzJustify="center" style="padding: 15px" *ngIf="index === 5">
+        <div nz-col nzSpan="24">
+          <h1>Input and process evaluation (Implementation) </h1>
+        </div>
+        <div nz-col nzSpan="24">
+          <small>Tick Mark in the relevant boxes to indicate your response</small>
+        </div>
+        <form nz-form nzLayout="vertical" [formGroup]="evaluationForm">
+          <div style="padding: 10px; background: #DCDCDC;" nz-row [nzGutter]="7">
+            <div nz-col nzSpan="2">
+              <b>#</b>
+            </div>
+            <div style="text-align: center;" nz-col nzSpan="13">
+              <b>Parameters of evaluation</b>
+            </div>
+            <div nz-col nzSpan="7" style="margin-left: 10px;">
+                <div nz-row [nzGutter]="16">
+                  <div nz-col nzSpan="4">
+                    <b>1</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>2</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>3</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>4</b>
+                </div>
+                <div nz-col nzSpan="4">
+                  <b>5</b>
+                </div>
+                </div>
+
+            </div>
+            <div style="margin-left: -15px;" nz-col nzSpan="2">
+              <b>Total</b>
+            </div>
+          </div>
+          <div style="padding: 10px;"  *ngFor="let inputEvalluationDetails of inputEvaluationControls.controls; let i = index">
+            <div nz-row [nzGutter]="7" [formGroup]="inputEvalluationDetails">
+              <div nz-col nzSpan="2">
+                <b>{{i + 1}}</b>
+              </div>
+              <div nz-col nzSpan="13" >
+                  {{inputEvalluationDetails?.value?.criteria}}
+              </div>
+                  <div nz-col nzSpan="7">
+                      <nz-form-control nz-row [nzGutter]="16">
+                        <nz-radio-group formControlName="point" nzValueType="number"   nzErrorTip="Please select point!">
+                          <label  nz-col nzSpan="4" nz-radio nzValue="1"></label>
+                          <label  nz-col nzSpan="4" nz-radio nzValue="2"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="3"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="4"></label>
+                          <label  nz-col nzSpan="3" nz-radio nzValue="5"></label>
+                        </nz-radio-group>
+                      </nz-form-control>
+                  </div>
+                  <div nz-col nzSpan="2" >
+                    {{inputEvalluationDetails?.value?.point}}
+                </div>
+            </div>
+          </div>
+          <hr>
+          <div style="padding: 10px; background: #DCDCDC;" nz-row [nzGutter]="7">
+            <div nz-col nzSpan="2">
+              <b>#</b>
+            </div>
+            <div style="text-align: center;" nz-col nzSpan="15">
+              <b>Parameters of evaluation</b>
+            </div>
+            <div nz-col nzSpan="7">
+                <div nz-row [nzGutter]="16">
+                  <div nz-col nzSpan="12">
+                    <b>YES</b>
+                </div>
+                <div nz-col nzSpan="12">
+                  <b>NO</b>
+                </div>
+                </div>
+
+            </div>
+
+          </div>
+          <div style="padding: 10px;"  *ngFor="let processEvaluationDetails of processEvaluationControls.controls; let i = index">
+            <div nz-row [nzGutter]="7" [formGroup]="processEvaluationDetails">
+              <div nz-col nzSpan="2">
+                <b>{{i + 1}}</b>
+              </div>
+              <div nz-col nzSpan="15" >
+                  {{processEvaluationDetails?.value?.criteria}}
+              </div>
+                  <div nz-col nzSpan="7">
+                      <nz-form-control nz-row [nzGutter]="16">
+                        <nz-radio-group formControlName="response" nzValueType="boolean"   nzErrorTip="Please select point!">
+                          <label  nz-col nzSpan="12" nz-radio nzValue="true"></label>
+                          <label  nz-col nzSpan="12" nz-radio nzValue="false"></label>
+                        </nz-radio-group>
+                      </nz-form-control>
+                  </div>
+
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <hr>
+      <div nz-row nzJustify="center" style="padding: 15px" *ngIf="index === 6">
+        <div nz-col nzSpan="24">
+          <h1>Impact Survey questions</h1>
+        </div>
+        <div nz-col nzSpan="24">
+          <small>Fill your response</small>
+        </div>
+        <form nz-form nzLayout="vertical" [formGroup]="evaluationForm" (ngSubmit)="onSubmitForm()">
+          <div nz-row nzGutter="16" style="text-align: justify;">
+              <div nz-col nzSpan="24" *ngFor="let surveyQuestionsDetail of serveyQuestionControls.controls; let i = index">
+                <div [formGroup]="surveyQuestionsDetail">
+                  <nz-form-item>
+                    <nz-form-label nzRequired>{{i + 1}}. {{surveyQuestionsDetail?.value?.criteria}}</nz-form-label>
+                    <nz-form-control>
+                      <nz-radio-group formControlName="response" nzValueType="boolean"   nzErrorTip="Please select point!">
+                        <div nz-row [nzGutter]="16">
+                          <label  nz-col nzSpan="10" nz-radio nzValue="true">YES</label>
+                          <label  nz-col nzSpan="10" nz-radio nzValue="false">NO</label>
+                        </div>
+                      </nz-radio-group><br/><br/>
+                      <textarea nz-input [nzAutosize]="{minRows:2}" formControlName="reason" placeholder="explain why/why not"></textarea>
+                    </nz-form-control>
+                  </nz-form-item>
+                </div>
+              </div>
+          </div>
+          <div nz-row >
+            <button
+            nz-button type="submit"
+            style="background: #b30c13; color: #fff; border-radius: 5px"
+          >
+          <i nz-icon nzType="send"></i> Submit
+          </button>
+          </div>
+        </form>
+
+      </div>
+      <div nz-row nzJustify="center" style="padding: 15px" *ngIf="index === 7">
+        <p style="text-align: justify; line-height: 2em;">
+          We are very appreciative of the time you have taken to assist in our analysis, and commit to utilizing the information gained to contemplate and implement
+          worthwhile improvements.
+        </p>
+      </div>
+    </div>
+    <div nz-row [nzGutter]="16" nzJustify="end" *ngIf="index <= 5">
+      <div nz-col nzSpan="12" style="margin-bottom: 50px;" >
+
+        <nz-space>
+          <nz-space-item>
+            <button
+            (click)="onPrevious()"
+              nz-button
+              style="background: #b30c13; color: #fff; border-radius: 5px"
+            >
+              Previous <i nz-icon nzType="left"></i>
+            </button>
+          </nz-space-item>
+          <nz-space-item>
+            <button
+            (click)="onNext()"
+              nz-button
+              style="background: #b30c13; color: #fff; border-radius: 5px"
+            >
+              Next <i nz-icon nzType="right"></i>
+            </button>
+          </nz-space-item>
+
+        </nz-space>
+        </div>
+    </div>
+  </div>
+</div>
